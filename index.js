@@ -47,7 +47,7 @@ async function checkGameOverOrNextLevel()
         if(userTilesInputs[i] !== tiles[i])
         {
             playAudio('wrong');
-            alert('GAME OVER');
+            $('h1').text('Game is over! Press Any Key to Play Again.');
             //GAME OVER on reset le jeu
             level = 0;
             tiles = [];
@@ -97,6 +97,7 @@ function generateTile()
     //On ajoute ce nouveau tile à l'array
     tiles.push(randomTile);
     ++level;
+    $('h1').text('Level '+level);
 }
 
 function delay(ms) {
